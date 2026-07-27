@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motorola Dashboard | Gurneet Singh</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+    <!-- Background Animation -->
+    <div class="bg-animation">
+        <div class="glow-orb"></div>
+        <div class="glow-orb" style="left: 50%; top: 50%;"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="scrolled">
+        <div class="nav-container">
+            <div class="logo">GS<span>.</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Back to Home</a></li>
+            </ul>
+            <a href="index.html#contact" class="btn btn-primary">Hire Me</a>
+        </div>
+    </nav>
+
+    <!-- Dashboard Content -->
+    <section class="dashboard-hero">
+        <div class="section-container" style="text-align: center; padding-top: 150px;">
+            <h1 class="main-heading" style="font-size: 3.5rem;">Motorola <br>Dashboard</h1>
+            <p class="intro-text">Scroll down to explore the insights and analytics.</p>
+        </div>
+    </section>
+
+    <div class="stacking-container">
+        <!-- SVG Definitions for Arrows to keep code clean -->
+        <svg style="display:none;">
+            <defs>
+                <g id="arrow-right">
+                    <path d="M 0,20 Q 30,0 55,20" fill="none" stroke="#FF7800" stroke-width="2"
+                        stroke-linecap="round" />
+                    <path d="M 45,10 L 56,20 L 45,30" fill="none" stroke="#FF7800" stroke-width="2"
+                        stroke-linecap="round" />
+                </g>
+                <g id="arrow-left">
+                    <path d="M 60,20 Q 30,0 5,20" fill="none" stroke="#FF7800" stroke-width="2"
+                        stroke-linecap="round" />
+                    <path d="M 15,10 L 4,20 L 15,30" fill="none" stroke="#FF7800" stroke-width="2"
+                        stroke-linecap="round" />
+                </g>
+            </defs>
+        </svg>
+
+        <!-- Card 1 -->
+        <div class="stacking-card" id="card1">
+            <div class="card-layout">
+                <div class="desc-side desc-left">
+                    <div class="desc-point" data-aos="fade-right" data-aos-mirror="true">
+                        <p>High-level Overview</p>
+                        <svg>
+                            <use href="#arrow-right" />
+                        </svg>
+                    </div>
+                    <div class="desc-point" data-aos="fade-right" data-aos-delay="100" data-aos-mirror="true">
+                        <p>Key Performance Indicators</p>
+                        <svg>
+                            <use href="#arrow-right" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="card-main">
+                    <div class="card-header">
+                        <h2>01</h2>
+                        <div class="card-title-group">
+                            <span class="client-label">MOTOROLA</span>
+                            <h3>Motorola Main Dashboard</h3>
+                        </div>
+                    </div>
+                    <div class="img-wrapper">
+                        <img src="ScreenShots/Matrola Dashboard.png" alt="Motorola Dashboard Overview">
+                    </div>
+                </div>
+                <div class="desc-side desc-right">
+                    <div class="desc-point" data-aos="fade-left" data-aos-mirror="true">
+                        <svg>
+                            <use href="#arrow-left" />
+                        </svg>
+                        <p>Comprehensive overview of all major metrics in one glance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="stacking-card" id="card2">
+            <div class="card-layout">
+                <div class="desc-side desc-left">
+                    <div class="desc-point" data-aos="fade-right" data-aos-mirror="true">
+                        <p>Monthly Analytics</p>
+                        <svg>
+                            <use href="#arrow-right" />
+                        </svg>
+                    </div>
+                    <div class="desc-point" data-aos="fade-right" data-aos-delay="100" data-aos-mirror="true">
+                        <p>Trend Analysis</p>
+                        <svg>
+                            <use href="#arrow-right" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="card-main">
+                    <div class="card-header">
+                        <h2>02</h2>
+                        <div class="card-title-group">
+                            <span class="client-label">MOTOROLA</span>
+                            <h3>Month-Wise Performance</h3>
+                        </div>
+                    </div>
+                    <div class="img-wrapper">
+                        <img src="ScreenShots/Month_vise.png" alt="Month-Wise Performance">
+                    </div>
+                </div>
+                <div class="desc-side desc-right">
+                    <div class="desc-point" data-aos="fade-left" data-aos-mirror="true">
+                        <svg>
+                            <use href="#arrow-left" />
+                        </svg>
+                        <p>Detailed month-over-month performance and insights.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer style="margin-top: 100px;">
+        <p>&copy; 2026 Gurneet Singh. All rights reserved.</p>
+    </footer>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: false,
+            mirror: true,
+            offset: 50
+        });
+
+        // Script to fade out previous descriptions when scrolling down to the next card
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.stacking-card');
+            const stickyTops = [100, 130]; // Sticky tops defined in CSS
+
+            window.addEventListener('scroll', () => {
+                cards.forEach((card, index) => {
+                    const nextCard = cards[index + 1];
+                    const descSides = card.querySelectorAll('.desc-side');
+
+                    if (nextCard) {
+                        const nextRect = nextCard.getBoundingClientRect();
+                        // If the next card is within 150px of its sticky position, 
+                        // start fading out the current card's descriptions.
+                        if (nextRect.top <= stickyTops[index + 1] + 150) {
+                            descSides.forEach(desc => {
+                                desc.style.opacity = '0';
+                                desc.style.pointerEvents = 'none';
+                                desc.style.transform = 'scale(0.95)';
+                            });
+                        } else {
+                            descSides.forEach(desc => {
+                                desc.style.opacity = '1';
+                                desc.style.pointerEvents = 'auto';
+                                desc.style.transform = 'scale(1)';
+                            });
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

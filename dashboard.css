@@ -1,0 +1,239 @@
+/* Dashboard Specific Styles */
+
+/* Background Animation */
+.bg-animation {
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    width: 100vw; 
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+    background: var(--bg-dark);
+}
+
+.glow-orb {
+    position: absolute;
+    width: 60vw;
+    height: 60vw;
+    max-width: 800px;
+    max-height: 800px;
+    background: radial-gradient(circle, rgba(255, 120, 0, 0.15) 0%, rgba(255, 120, 0, 0) 70%);
+    border-radius: 50%;
+    filter: blur(60px);
+    animation: moveOrb 20s infinite alternate ease-in-out;
+}
+
+.glow-orb:nth-child(2) {
+    background: radial-gradient(circle, rgba(0, 255, 136, 0.1) 0%, rgba(0, 255, 136, 0) 70%);
+    animation-delay: -10s;
+    animation-duration: 25s;
+}
+
+@keyframes moveOrb {
+    0% { transform: translate(-30%, -30%) scale(1); }
+    100% { transform: translate(60vw, 60vh) scale(1.2); }
+}
+
+/* Stacking Cards Container */
+.stacking-container {
+    padding-top: 50px;
+    padding-bottom: 250px; /* Extra space to scroll past the last card */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* Individual Stacking Card */
+.stacking-card {
+    position: sticky;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+/* Sticky top offsets for overlapping */
+#card1 { top: 100px; z-index: 10; }
+#card2 { top: 130px; z-index: 20; }
+#card3 { top: 160px; z-index: 30; }
+#card4 { top: 190px; z-index: 40; }
+#card5 { top: 220px; z-index: 50; }
+
+/* Card Header */
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 20px;
+}
+
+.card-header h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--text-main);
+    line-height: 1;
+}
+
+.card-title-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.client-label {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.card-title-group h3 {
+    font-size: 1.4rem;
+    color: var(--text-main);
+}
+
+/* Image Wrapper and Authentic Glow */
+.img-wrapper {
+    width: 100%;
+    border-radius: 12px;
+    position: relative;
+    max-height: 55vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    max-height: 55vh;
+    object-fit: contain;
+    display: block;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.1);
+    /* Authentic Glow */
+    box-shadow: 0 0 40px rgba(255, 120, 0, 0.3), 
+                0 0 15px rgba(255, 120, 0, 0.1), 
+                0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Card Layout */
+.card-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr 280px;
+    gap: 30px;
+    align-items: center;
+}
+
+.card-main {
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 24px;
+    padding: 20px;
+    box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.desc-side {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.desc-point {
+    background: transparent;
+    padding: 0;
+    font-size: 1rem;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: var(--transition);
+}
+
+.desc-point p {
+    flex: 1;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.desc-left .desc-point {
+    text-align: right;
+    justify-content: flex-end;
+}
+
+.desc-right .desc-point {
+    text-align: left;
+    justify-content: flex-start;
+}
+
+.desc-point svg {
+    width: 60px;
+    height: 40px;
+    flex-shrink: 0;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .card-layout {
+        grid-template-columns: 200px 1fr 200px;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 992px) {
+    .card-layout {
+        grid-template-columns: 1fr;
+    }
+    .card-main {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    .desc-side {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .desc-left .desc-point, .desc-right .desc-point {
+        text-align: center;
+        flex-direction: column-reverse;
+    }
+    .desc-point svg {
+        transform: rotate(90deg);
+    }
+    .desc-side {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .desc-point {
+        flex: 1 1 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .card-header {
+        flex-wrap: wrap;
+    }
+    .card-header h2 {
+        font-size: 2rem;
+    }
+    .stacking-card {
+        padding: 20px;
+    }
+    #card1 { top: 100px; }
+    #card2 { top: 120px; }
+    #card3 { top: 140px; }
+    #card4 { top: 160px; }
+    #card5 { top: 180px; }
+}
